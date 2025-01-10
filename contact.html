@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XINLIN BEAUTY PTE LTD</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.querySelectorAll(".slides");
+            slides.forEach((slide) => (slide.style.display = "none"));
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+        window.onload = showSlides;
+    </script>
+    <style>
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            position: relative;
+        }
+
+        .slides {
+            max-width: 80%;
+            max-height: 80%;
+            display: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 18px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-container {
+            display: flex;
+            align-items: flex-start;  /* Align to the top */
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .contact-details {
+            flex: 0 0 30%; /* 30% width for Contact Us */
+            padding-right: 20px;
+        }
+
+        .contact-image {
+            flex: 0 0 50%; /* 50% width for Image */
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <header style="background: url('images/bk1.jpg') no-repeat center center/cover; height: 20vh;">
+        <h1>XINLIN BEAUTY PTE LTD</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-info">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-details">
+                <p><strong>Phone:</strong> +65 62511022</p>
+                <p><strong>Email:</strong> <a href="mailto:yanyan15250@gmail.com">yanyan15250@gmail.com</a></p>
+                <p><strong>Address:</strong> 704 ANG MO KIO AVENUE 8, #01-2551, SINGAPORE 560704</p>
+                
+            </div>
+            <div class="contact-image">
+                <img src="images/contact-image.jpg" alt="Contact Us Image">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 XINLIN BEAUTY PTE LTD</p>
+    </footer>
+</body>
+</html>

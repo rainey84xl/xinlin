@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XINLIN BEAUTY PTE LTD</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.querySelectorAll(".slides");
+            slides.forEach((slide) => (slide.style.display = "none"));
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+        window.onload = showSlides;
+    </script>
+    <style>
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            position: relative;
+        }
+
+        .slides {
+            max-width: 80%;
+            max-height: 80%;
+            display: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <header style="background: url('images/bk1.jpg') no-repeat center center/cover; height: 20vh;">
+        <h1>XINLIN BEAUTY PTE LTD</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <div id="home" class="slideshow-container" style="background: url('images/bk2.jpg') no-repeat center center/cover;height: 100vh;">
+        <img class="slides" src="images/image1.jpg" alt="Slideshow Image 1">
+        <img class="slides" src="images/image2.jpg" alt="Slideshow Image 2">
+        <img class="slides" src="images/image3.jpg" alt="Slideshow Image 3">
+        <img class="slides" src="images/image4.jpg" alt="Slideshow Image 4">
+        <img class="slides" src="images/image5.jpg" alt="Slideshow Image 5">
+        <img class="slides" src="images/image6.jpg" alt="Slideshow Image 6">
+        <img class="slides" src="images/image7.jpg" alt="Slideshow Image 7">
+    </div>
+
+    <!-- About Us Page -->
+    <div id="about" class="container">
+        
+        <p style="font-size: 12px;text-align: center;">Welcome to XINLIN BEAUTY PTE LTD<br> We bring you the finest beauty and wellness services. <br>Our team is dedicated to helping you relax, rejuvenate, and glow from within.</p>
+    </div>
+
+  
+
+    <footer>
+        <p>&copy; 2025 XINLIN BEAUTY PTE LTD</p>
+    </footer>
+</body>
+</html>

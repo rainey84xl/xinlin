@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XINLIN BEAUTY PTE LTD</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.querySelectorAll(".slides");
+            slides.forEach((slide) => (slide.style.display = "none"));
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+        window.onload = showSlides;
+    </script>
+    <style>
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            position: relative;
+        }
+
+        .slides {
+            max-width: 80%;
+            max-height: 80%;
+            display: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .container p, .container ul {
+            text-align: justify;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <header style="background: url('images/bk1.jpg') no-repeat center center/cover; height: 20vh;">
+        <h1>XINLIN BEAUTY PTE LTD</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+ 
+
+    <!-- About Us Page -->
+   <div class="container">
+  <!-- Image Gallery Section -->
+    <div class="image-gallery-container">
+        <h2>XINLIN BEAUTY</h2>
+        <div class="image-gallery">
+            <img src="images/xinlin1.jpg" alt="XINLIN 1">
+            <img src="images/xinlin2.jpg" alt="XINLIN 2">
+            <img src="images/xinlin3.jpg" alt="XINLIN 3">
+            <img src="images/xinlin4.jpg" alt="XINLIN 4">
+            <img src="images/xinlin5.jpg" alt="XINLIN 5">
+            <img src="images/xinlin6.jpg" alt="XINLIN 6">
+            <img src="images/xinlin7.jpg" alt="XINLIN 7">
+            <img src="images/xinlin8.jpg" alt="XINLIN 8">
+        </div>
+    </div>
+        <h1>Company Profile</h1>
+        <p>Founded in 2017, <strong>XINLIN BEAUTY</strong> has always adhered to the service philosophy of "Creating Unique Beauty for Every Customer," dedicating itself to providing professional and personalized beauty care services. After years of continuous effort and innovation, we have opened multiple branches in various cities and earned the trust and support of our customers through exceptional skills and high-quality services.</p>
+        <p>Our team consists of experienced and skilled beauticians, skin care specialists, and hair stylists who, using modern technology and advanced equipment, offer comprehensive beauty services ranging from facial treatments to full-body care. We are committed to customer satisfaction, providing safe, effective, and scientifically backed solutions to help customers restore their youthful glow, enhance their confidence, and radiate beauty.</p>
+
+        <h1>Company Vision</h1>
+        <p>Looking ahead, <strong>XINLIN BEAUTY</strong> will continue to uphold its brand spirit of "Beauty, Health, and Happiness," striving to achieve the following goals:</p>
+        <ul>
+            <li><strong>Become an Industry Leader:</strong> By continuously innovating and optimizing service quality, we aim to enhance the beauty experience for our customers and become the most beloved brand in the industry.</li>
+            <li><strong>Expand Our Network of Services:</strong> We plan to expand our presence across the nation, offering more customers the chance to experience our professional services and bringing beauty and confidence to even more people.</li>
+            <li><strong>Focus on Technological Innovation:</strong> We are dedicated to introducing advanced technologies and equipment, staying on top of the latest beauty trends both domestically and internationally to continually improve service quality and treatment effectiveness.</li>
+            <li><strong>Develop Professional Talent:</strong> We place great importance on the cultivation and growth of our talent, building a highly skilled and professional beauty team that can provide all-encompassing beauty care.</li>
+            <li><strong>Social Responsibility:</strong> We actively engage in social welfare activities, focusing on promoting mental health and happiness, and contributing positively to society by spreading beauty and positive energy.</li>
+        </ul>
+
+        <p><strong>XINLIN BEAUTY</strong>, your partner in every beautiful moment, where beauty and health walk together!</p>
+    </div>
+
+  
+
+    <footer>
+        <p>&copy; 2025 XINLIN BEAUTY PTE LTD</p>
+    </footer>
+</body>
+</html>
