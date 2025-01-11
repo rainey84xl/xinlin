@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XINLIN BEAUTY PTE LTD</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.querySelectorAll(".slides");
+            slides.forEach((slide) => (slide.style.display = "none"));
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+        window.onload = showSlides;
+    </script>
+    <style>
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            position: relative;
+        }
+
+        .slides {
+            max-width: 80%;
+            max-height: 80%;
+            display: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .container p, .container ul {
+            text-align: justify;
+        }
+
+        .project-section {
+            margin: 40px 0;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .project-gallery img, .project-gallery video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <header style="background: url('images/bk1.jpg') no-repeat center center/cover; height: 20vh;">
+        <h1>XINLIN BEAUTY PTE LTD</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+<a href="cases.html">Business Cases</a>
+            <a href="contact.html">Contact Us</a>
+            
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Our Business Cases</h1>
+        <!-- Manicure -->
+        <div class="project-section">
+            <h2>Manicure</h2>
+            <div class="project-gallery">
+                <a href="images/Work/mj1.jpg" target="_blank">
+                    <img src="images/Work/mj1.jpg" alt="Manicure 1">
+                </a>
+                <a href="images/Work/mj2.jpg" target="_blank">
+                    <img src="images/Work/mj2.jpg" alt="Manicure 2">
+                </a>
+                <a href="images/Work/mj3.jpg" target="_blank">
+                    <img src="images/Work/mj3.jpg" alt="Manicure 3">
+                </a>
+                <a href="images/Work/mj4.jpg" target="_blank">
+                    <img src="images/Work/mj4.jpg" alt="Manicure 4">
+                </a>
+            </div>
+        </div>
+        <!-- Eyebrow Embroidery -->
+        <div class="project-section">
+            <h2>Eyebrow Embroidery</h2>
+            <div class="project-gallery">
+                <a href="images/Work/wm1.jpg" target="_blank">
+                    <img src="images/Work/wm1.jpg" alt="Eyebrow Embroidery 1">
+                </a>
+                <a href="images/Work/wm2.jpg" target="_blank">
+                    <img src="images/Work/wm2.jpg" alt="Eyebrow Embroidery 2">
+                </a>
+                <a href="images/Work/wm3.jpg" target="_blank">
+                    <img src="images/Work/wm3.jpg" alt="Eyebrow Embroidery 3">
+                </a>
+            </div>
+            <div class="project-gallery">
+                <a href="images/Work/wm4.mp4" target="_blank">
+                    <video controls>
+                        <source src="images/Work/wm.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+            </div>
+        </div>
+
+        <!-- Skin Care -->
+        <div class="project-section">
+            <h2>Skin Care</h2>
+            <div class="project-gallery">
+                <a href="images/Work/pf1.jpg" target="_blank">
+                    <img src="images/Work/pf1.jpg" alt="Skin Care Photo">
+                </a>
+                <a href="images/Work/pf2.mp4" target="_blank">
+                    <video controls>
+                        <source src="images/Work/pf2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+            </div>
+        </div>
+
+
+
+        <!-- Eyelash Extensions -->
+        <div class="project-section">
+            <h2>Eyelash Extensions</h2>
+            <div class="project-gallery">
+                <a href="images/Work/mm1.mp4" target="_blank">
+                    <video controls>
+                        <source src="images/Work/mm1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+            </div>
+        </div>
+
+        <!-- Body Relaxation -->
+        <div class="project-section">
+            <h2>Body Relaxation</h2>
+            <div class="project-gallery">
+                <a href="images/Work/fs1.mp4" target="_blank">
+                    <video controls>
+                        <source src="images/Work/fs1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+                <a href="images/Work/fs2.mp4" target="_blank">
+                    <video controls>
+                        <source src="images/Work/fs2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+                <a href="images/Work/fs3.mp4" target="_blank">
+                    <video controls>
+                        <source src="images/Work/fs3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 XINLIN BEAUTY PTE LTD</p>
+    </footer>
+</body>
+</html>
