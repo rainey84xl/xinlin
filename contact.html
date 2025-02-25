@@ -35,34 +35,36 @@
         }
 
         .contact-info {
-            margin-top: 20px;
+            margin: 20px auto;
             font-size: 18px;
             width: 80%;
-            margin-left: auto;
-            margin-right: auto;
+            text-align: center;
         }
 
         .contact-container {
             display: flex;
-            align-items: flex-start;  /* Align to the top */
+            flex-wrap: wrap;
             justify-content: space-between;
+            align-items: flex-start;
             width: 100%;
+            gap: 20px;
         }
 
         .contact-details {
-            flex: 0 0 30%; /* 30% width for Contact Us */
-            padding-right: 20px;
+            flex: 1;
+            text-align: left;
         }
 
-        .contact-image {
-            flex: 0 0 50%; /* 50% width for Image */
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
         }
 
-        .contact-image img {
+        .map-container iframe {
             width: 100%;
-            height: auto;
-            max-width: 800px;
-            object-fit: cover;
+            height: 100%;
+            border: 0;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -75,11 +77,21 @@
         .contact-info a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-details {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Home Page -->
-    <header style="background: url('images/bk1.jpg') no-repeat center center/cover; height: 20vh;">
+    <!-- Header -->
+    <header style="background: url('images/bk1.jpg') no-repeat center center/cover; height: 20vh; text-align: center; color: BLACK;">
         <h1>XINLIN BEAUTY PTE LTD</h1>
         <nav>
             <a href="index.html">Home</a>
@@ -98,10 +110,9 @@
                 <p><strong>Phone:</strong> +65 62511022</p>
                 <p><strong>Email:</strong> <a href="mailto:yanyan15250@gmail.com">yanyan15250@gmail.com</a></p>
                 <p><strong>Address:</strong> 704 ANG MO KIO AVENUE 8, #01-2551, SINGAPORE 560704</p>
-                
             </div>
-            <div class="contact-image">
-                <img src="images/contact-image.jpg" alt="Contact Us Image">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6772333101667!2d103.84467607572216!3d1.3703477986166979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da16e6ffb1908d%3A0x22d187f39bdcc8a3!2sXinlin%20Beauty!5e0!3m2!1sen!2ssg!4v1740467771854!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
