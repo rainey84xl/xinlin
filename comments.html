@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments - XINLIN BEAUTY</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .comment-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: #fff;
+        }
+        .comment-container h2 {
+            text-align: center;
+        }
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .comment-form input, .comment-form textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .comment-form button {
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .comments-section {
+            margin-top: 20px;
+        }
+        .comment {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+        .comment .timestamp {
+            font-size: 0.8em;
+            color: gray;
+        }
+        .delete-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <!-- Home Page -->
+    <header style="background: url('images/bk1.jpg') no-repeat center center/cover; height: 20vh;">
+        <h1>XINLIN BEAUTY PTE LTD</h1>
+  
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="cases.html">Business Cases</a>
+            <a href="comments.html">Comments</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    
+
+<div class="comment-container">
+    <h2>Comments</h2>
+    <p style="text-align: center; color: #555;">We appreciate your comments and look forward to hearing from you.</p>
+    <form class="comment-form" id="commentForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Comment" rows="4" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div class="comments-section" id="commentsSection">
+        <h3>User Comments</h3>
+    </div>
+</div>
+    
+    <footer>
+        <p>&copy; 2025 XINLIN BEAUTY PTE LTD</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadComments();
+        });
+
+        document.getElementById("commentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById("name").value.trim();
+            let message = document.getElementById("message").value.trim();
+            if (!name || !message) return;
+
+            let timestamp = new Date().toLocaleString();
+            let commentId = Date.now(); // 生成唯一 ID
+
+            let newComment = { id: commentId, name, message, timestamp };
+
+            let comments = JSON.parse(localStorage.getItem("comments")) || [];
+            comments.push(newComment);
+            localStorage.setItem("comments", JSON.stringify(comments));
+
+            addCommentToDOM(newComment);
+            document.getElementById("commentForm").reset();
+        });
+
+        function addCommentToDOM(comment) {
+            let commentSection = document.getElementById("commentsSection");
+
+            let commentDiv = document.createElement("div");
+            commentDiv.classList.add("comment");
+            commentDiv.setAttribute("data-id", comment.id);
+            commentDiv.innerHTML = `<strong>${comment.name}:</strong> <p>${comment.message}</p><span class="timestamp">${comment.timestamp}</span> <button class="delete-btn">Delete</button>`;
+
+            commentDiv.querySelector(".delete-btn").addEventListener("click", function() {
+                deleteComment(comment.id);
+            });
+
+            commentSection.appendChild(commentDiv);
+        }
+
+        function loadComments() {
+            let comments = JSON.parse(localStorage.getItem("comments")) || [];
+            comments.forEach(comment => addCommentToDOM(comment));
+        }
+
+        function deleteComment(commentId) {
+            let comments = JSON.parse(localStorage.getItem("comments")) || [];
+            comments = comments.filter(comment => comment.id !== commentId);
+            localStorage.setItem("comments", JSON.stringify(comments));
+
+            let commentElement = document.querySelector(`.comment[data-id="${commentId}"]`);
+            if (commentElement) commentElement.remove();
+        }
+    </script>
+</body>
+</html>
+
